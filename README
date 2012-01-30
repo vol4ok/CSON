@@ -1,0 +1,7 @@
+Usage: cson [options]
+
+  -i, --input        input file
+  -o, --output       output file
+  -u, --uglify       compact print
+  -v, --version      show version
+  -h, --help         display this help message
