@@ -12,7 +12,7 @@ engines:
 directories:
   lib: "./lib/cson"
 bin:
-  nbuild: "./bin/cson"
+  cson: "./bin/cson"
 repository:
   type: "git",
   url: "git://github.com/vol4ok/cson.git"
