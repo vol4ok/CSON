@@ -18,14 +18,14 @@
     "node": ">=0.4.12"
   },
   "directories": {
-    "lib": "./lib/cson"
+    "lib": "./lib/CSON"
   },
   "bin": {
     "cson": "./bin/cson"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/vol4ok/cson.git"
+    "url": "git://github.com/vol4ok/CSON.git"
   },
   "dependencies": {
     "coffee-script": ">=1.2.0",
