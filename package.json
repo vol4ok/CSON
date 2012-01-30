@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "coffee-script" : ">=1.2.0",
+    "colors"        : ">=0.6"
   }
 }
