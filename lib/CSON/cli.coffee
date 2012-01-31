@@ -16,13 +16,13 @@ CSON         = require('./cson')
 {extname, basename} = path
 
 VERSION = "0.1"
-BANNER = 'Usage: cson [options]'
+BANNER = 'Usage: cson [options] path/to/json/file'
 SWITCHES = [
-  ['-o', '--output [FILE]', 'output file']
-  ['-u', '--uglify',        'compact print']
-  ['-s', '--stdout',        'print to stdout']
-  ['-v', '--version',       'show version']
-  ['-h', '--help',          'display this help message']
+  ['-o', '--output [FILE*]', 'output file']
+  ['-u', '--uglify',         'compact print']
+  ['-s', '--stdout',         'print to stdout']
+  ['-v', '--version',        'show version']
+  ['-h', '--help',           'display this help message']
 ]
 
 ###* Entry point ###
@@ -44,15 +44,15 @@ main = () ->
     console.log optParser.help() 
     return
     
-  input = o.arguments[0]
-      
-  cson = fs.readFileSync(input, 'utf-8')
-  json = CSON.toJSON(cson, o.uglify)
+  for input,i in o.arguments      
+    cson = fs.readFileSync(input, 'utf-8')
+    json = CSON.toJSON(cson, o.uglify)
   
-  if o.stdout
-    console.log json
+    console.log json if o.stdout
     
-  output = o.output or (basename(input, extname(input)) + '.json')
-  fs.writeFileSync(output, json, 'utf-8')    
+    output = if o.output and o.output[i]
+    then o.output[i]
+    else basename(input, extname(input)) + '.json'
+    fs.writeFileSync(output, json, 'utf-8')    
 
 main()

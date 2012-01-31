@@ -3,7 +3,7 @@
 ## Command Line
 
 ```
-Usage: cson [options]
+Usage: cson [options] path/to/json/file
 
   -o, --output       output file
   -u, --uglify       compact print
