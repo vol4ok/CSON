@@ -1,7 +1,9 @@
 # CSON
-
+------
 ## Command Line
-```Usage: cson [options]
+
+```
+Usage: cson [options]
 
   -o, --output       output file
   -u, --uglify       compact print
