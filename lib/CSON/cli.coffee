@@ -8,16 +8,19 @@
 
 require 'colors'
 fs           = require 'fs'
+path         = require 'path'
 coffee       = require 'coffee-script'
 OptionParser = require('coffee-script/lib/coffee-script/optparse').OptionParser
 CSON         = require('./cson')
 
+{extname, basename} = path
+
 VERSION = "0.1"
 BANNER = 'Usage: cson [options]'
 SWITCHES = [
-  ['-i', '--input [FILE]',  'input file']
   ['-o', '--output [FILE]', 'output file']
   ['-u', '--uglify',        'compact print']
+  ['-s', '--stdout',        'print to stdout']
   ['-v', '--version',       'show version']
   ['-h', '--help',          'display this help message']
 ]
@@ -36,17 +39,20 @@ main = () ->
     console.log "CSON v#{VERSION}\nCopyright(c) 2012 vol4ok <admin@vol4ok.net "
     return
     
-  unless o.input
+  if o.arguments.length is 0
     console.log 'Error: no input file!'.red
     console.log optParser.help() 
     return
+    
+  input = o.arguments[0]
       
-  cson = fs.readFileSync(o.input, 'utf-8')
+  cson = fs.readFileSync(input, 'utf-8')
   json = CSON.toJSON(cson, o.uglify)
   
-  if o.output
-    fs.writeFileSync(o.output, json, 'utf-8')
-  else
+  if o.stdout
     console.log json
+    
+  output = o.output or (basename(input, extname(input)) + '.json')
+  fs.writeFileSync(output, json, 'utf-8')    
 
 main()

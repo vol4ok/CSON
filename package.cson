@@ -1,7 +1,7 @@
 name: "CSON"
 description: "Coffee Script Object Notation"
 keywords: ["cson", "coffee-script", "json"]
-version: "0.1.0"
+version: "0.1.1"
 author: "vol4ok"
 licenses: [
   type: "MIT"
