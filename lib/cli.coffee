@@ -11,7 +11,7 @@ fs           = require 'fs'
 path         = require 'path'
 coffee       = require 'coffee-script'
 OptionParser = require('coffee-script/lib/coffee-script/optparse').OptionParser
-CSON         = require('./cson')
+CSON         = require('./CSON')
 
 {extname, basename} = path
 
