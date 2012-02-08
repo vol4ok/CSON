@@ -20,6 +20,7 @@ BANNER = 'Usage: cson [options] path/to/json/file'
 SWITCHES = [
   ['-o', '--output [FILE*]', 'output file']
   ['-u', '--uglify',         'compact print']
+  ['-c', '--cson',           'convert JSON to CSON']
   ['-s', '--stdout',         'print to stdout']
   ['-v', '--version',        'show version']
   ['-h', '--help',           'display this help message']
@@ -46,13 +47,16 @@ main = () ->
     
   for input,i in o.arguments      
     cson = fs.readFileSync(input, 'utf-8')
-    json = CSON.toJSON(cson, o.uglify)
+    json = if o.cson
+      CSON.toCSON(cson)
+    else
+      CSON.toJSON(cson, o.uglify)
   
     console.log json if o.stdout
     
     output = if o.output and o.output[i]
     then o.output[i]
-    else basename(input, extname(input)) + '.json'
+    else basename(input, extname(input)) + if o.cson then '.cson' else '.json'
     fs.writeFileSync(output, json, 'utf-8')    
 
 main()
