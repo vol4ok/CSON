@@ -1,0 +1,41 @@
+
+name: "CSON"
+description: "Coffee Script Object Notation"
+boolean: yes
+"boolean-2": no
+null: {}
+number: 1234
+array: []
+"array-2": [1234, "asdf", 
+  asdf: yes
+, [], [123, "1234"], [
+  qwe: 1234
+  qwer: yes
+]]
+keywords: ["cson", "coffee-script", "json"]
+version: "0.1.1"
+author: "vol4ok"
+licenses: [
+  type: "MIT"
+  url: "https://raw.github.com/vol4ok/CSON/master/LICENSE"
+, 
+  type: "APL"
+  url: "https://raw.github.com/vol4ok/CSON/master/LICENSE"
+]
+engines: 
+  node: ">=0.4.12"
+
+directories: 
+  lib: "./lib/CSON"
+
+bin: 
+  cson: "./bin/cson"
+
+repository: 
+  type: "git"
+  url: "git://github.com/vol4ok/CSON.git"
+
+dependencies: 
+  "coffee-script": ">=1.2.0"
+  colors: ">=0.6"
+
