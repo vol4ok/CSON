@@ -1,21 +1,21 @@
 name: "CSON"
 description: "Coffee Script Object Notation"
 keywords: ["cson", "coffee-script", "json"]
-version: "0.2.1"
+version: "0.3.0"
 author: "vol4ok"
 licenses: [
   type: "MIT"
-  url: "https://raw.github.com/vol4ok/CSON/master/LICENSE"
-]
+  url: "https://raw.github.com/vol4ok/CSON/master/LICENSE" ]
 engines: 
   node: ">=0.4.12"
-main: './lib/CSON.coffee'
+main: './lib/cson.js'
 bin:
   cson: "./bin/cson"
 repository:
   type: "git",
   url: "git://github.com/vol4ok/CSON.git"
 dependencies:
-  "coffee-script": ">=1.2.0"
   underscore: ">=1.2.0"
+devDependencies:
+  "coffee-script": ">=1.2.0"
   colors: ">=0.5"
