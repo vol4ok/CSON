@@ -6,12 +6,11 @@
 
 ###* Module dependencies ###
 
-require 'colors'
 fs           = require 'fs'
 path         = require 'path'
 coffee       = require 'coffee-script'
 OptionParser = require('coffee-script/lib/coffee-script/optparse').OptionParser
-CSON         = require('./CSON')
+CSON         = require('./cson')
 
 {extname, basename} = path
 

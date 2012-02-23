@@ -3,10 +3,27 @@
   "description": "Coffee Script Object Notation",
   "boolean": true,
   "boolean-2": false,
-  "null": null,
+  "null": {},
   "number": 1234,
   "array": [],
-  "array-2": [1234, "asdf", {"asdf": true}, [], [123, "1234"], [{"qwe":1234, "qwer": true}]],
+  "array-2": [
+    1234,
+    "asdf",
+    {
+      "asdf": true
+    },
+    [],
+    [
+      123,
+      "1234"
+    ],
+    [
+      {
+        "qwe": 1234,
+        "qwer": true
+      }
+    ]
+  ],
   "keywords": [
     "cson",
     "coffee-script",
